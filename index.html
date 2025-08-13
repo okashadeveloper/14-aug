@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pakistan Independence Day - 14th August 2024</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            overflow-x: hidden;
+            cursor: none;
+            background: #0a0a0a;
+            color: #ffffff;
+        }
+
+        /* Custom Cursor */
+        .custom-cursor {
+            position: fixed;
+            width: 25px;
+            height: 25px;
+            background: radial-gradient(circle, #00ff00 0%, #ffffff 50%, transparent 100%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: screen;
+            transition: all 0.1s ease;
+            box-shadow: 0 0 20px #00ff00;
+        }
+
+        .custom-cursor.hover {
+            transform: scale(2);
+            background: radial-gradient(circle, #ff0000 0%, #ffffff 50%, transparent 100%);
+            box-shadow: 0 0 30px #ff0000;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(13, 95, 58, 0.6)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%23001122" width="1920" height="1080"/><polygon points="0,800 400,600 800,700 1200,500 1600,600 1920,400 1920,1080 0,1080" fill="%23003344"/><circle cx="1600" cy="200" r="80" fill="%23ffffff" opacity="0.1"/><circle cx="300" cy="300" r="40" fill="%23ffffff" opacity="0.05"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.3) 70%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 5rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(100px) scale(0.8);
+            animation: heroTitleReveal 3s ease forwards;
+            background: linear-gradient(45deg, #ffffff, #90EE90, #ffffff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: heroTitleReveal 3s ease forwards, shimmerText 4s ease-in-out infinite;
+        }
+
+        @keyframes heroTitleReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes shimmerText {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .flag-container {
+            position: relative;
+            width: 400px;
+            height: 267px;
+            margin: 3rem 0;
+            opacity: 0;
+            animation: flagReveal 2s ease 1.5s forwards;
+            perspective: 1000px;
+        }
+
+        .flag {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #0d5f3a 75%, #ffffff 75%);
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            animation: realisticWave 4s ease-in-out infinite;
+            transform-origin: left center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .flag::after {
+            content: '☪';
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 4rem;
+            color: #0d5f3a;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .flag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            animation: flagShine 3s ease-in-out infinite;
+        }
+
+        @keyframes realisticWave {
+            0%, 100% { 
+                transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+                box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            }
+            25% { 
+                transform: rotateY(-8deg) rotateX(3deg) rotateZ(-2deg);
+                box-shadow: -10px 25px 70px rgba(0,0,0,0.7);
+            }
+            75% { 
+                transform: rotateY(8deg) rotateX(-3deg) rotateZ(2deg);
+                box-shadow: 10px 25px 70px rgba(0,0,0,0.7);
+            }
+        }
+
+        @keyframes flagShine {
+            0%, 100% { transform: translateX(-100%) skewX(-15deg); }
+            50% { transform: translateX(200%) skewX(-15deg); }
+        }
+
+        @keyframes flagReveal {
+            to { opacity: 1; }
+        }
+
+        /* JF-17 Thunder Animation */
+        .jf17-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .jf17 {
+            position: absolute;
+            width: 200px;
+            height: 80px;
+            top: 15%;
+            left: -250px;
+            animation: jf17Flight 12s linear infinite;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+        }
+
+        .jf17::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 80px;
+            background: linear-gradient(45deg, #2c3e50 0%, #34495e 30%, #7f8c8d  60%, #95a5a6 100%);
+            clip-path: polygon(0% 50%, 15% 20%, 40% 25%, 60% 30%, 85% 35%, 100% 40%, 95% 50%, 100% 60%, 85% 65%, 60% 70%, 40% 75%, 15% 80%);
+            box-shadow: inset 0 0 20px rgba(255,255,255,0.1);
+        }
+
+        .jf17::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 20px;
+            background: linear-gradient(90deg, transparent, rgba(255,100,0,0.8), rgba(255,200,0,0.6), transparent);
+            left: -60px;
+            top: 30px;
+            border-radius: 50%;
+            animation: jetExhaust 0.1s ease-in-out infinite alternate;
+        }
+
+        @keyframes jf17Flight {
+            0% { 
+                left: -250px; 
+                transform: rotate(0deg) scale(1);
+            }
+            20% { 
+                transform: rotate(-2deg) scale(1.1);
+            }
+            40% { 
+                transform: rotate(1deg) scale(1);
+            }
+            60% { 
+                transform: rotate(-1deg) scale(0.9);
+            }
+            80% { 
+                transform: rotate(0deg) scale(1);
+            }
+            100% { 
+                left: calc(100vw + 250px); 
+                transform: rotate(0deg) scale(0.8);
+            }
+        }
+
+        @keyframes jetExhaust {
+            0% { opacity: 0.8; transform: scaleX(1); }
+            100% { opacity: 1; transform: scaleX(1.5); }
+        }
+
+        /* Section Styles */
+        .section {
+            min-height: 100vh;
+            padding: 6rem 2rem;
+            position: relative;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .section-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            color: #ffffff;
+        }
+
+        .section-title {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+            background: linear-gradient(45deg, #ffffff, #90EE90);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* History Timeline */
+        .history-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%231a1a1a" width="1920" height="1080"/><rect fill="%232d2d2d" y="0" width="1920" height="200"/><rect fill="%23404040" y="200" width="1920" height="200"/><rect fill="%232d2d2d" y="400" width="1920" height="200"/><rect fill="%231a1a1a" y="600" width="1920" height="200"/><rect fill="%230d0d0d" y="800" width="1920" height="280"/></svg>');
+        }
+
+        .timeline {
+            position: relative;
+            padding: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: linear-gradient(to bottom, #90EE90, #0d5f3a, #90EE90);
+            transform: translateX(-50%);
+            box-shadow: 0 0 20px rgba(144, 238, 144, 0.5);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 4rem 0;
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 1s ease;
+        }
+
+        .timeline-item.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-item:nth-child(even) {
+            transform: translateX(100px);
+        }
+
+        .timeline-item:nth-child(even).animate {
+            transform: translateX(0);
+        }
+
+        .timeline-content {
+            background: linear-gradient(135deg, rgba(13, 95, 58, 0.3), rgba(0, 0, 0, 0.6));
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 0 3rem;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(144, 238, 144, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(144, 238, 144, 0.1), transparent);
+            animation: timelineShine 4s ease-in-out infinite;
+        }
+
+        @keyframes timelineShine {
+            0%, 100% { left: -100%; }
+            50% { left: 100%; }
+        }
+
+        .timeline-year {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #90EE90;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .timeline-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .timeline-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        /* Wars Section */
+        .wars-section {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(139, 69, 19, 0.4)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%232d1810" width="1920" height="1080"/><polygon points="0,200 300,150 600,180 900,120 1200,160 1500,100 1800,140 1920,90 1920,300 1500,350 1200,320 900,380 600,340 300,400 0,360" fill="%233d2820"/><circle cx="200" cy="400" r="80" fill="%231a0a0a" opacity="0.6"/><circle cx="800" cy="600" r="120" fill="%231a0a0a" opacity="0.4"/><circle cx="1400" cy="300" r="60" fill="%231a0a0a" opacity="0.7"/></svg>');
+            position: relative;
+        }
+
+        .wars-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M10,50 Q30,20 50,50 Q70,80 90,50" stroke="%23660000" stroke-width="2" fill="none" opacity="0.3"/><path d="M20,30 Q40,10 60,30 Q80,50 100,30" stroke="%23660000" stroke-width="1" fill="none" opacity="0.2"/></svg>');
+            background-size: 200px 200px;
+            animation: crackPattern 10s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes crackPattern {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+        }
+
+        .war-card {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.8), rgba(0, 0, 0, 0.9));
+            margin: 3rem 0;
+            padding: 3rem;
+            border-radius: 20px;
+            border-left: 8px solid #cc0000;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+        }
+
+        .war-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .war-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(204, 0, 0, 0.2), transparent);
+            animation: bloodEffect 6s ease-in-out infinite;
+        }
+
+        @keyframes bloodEffect {
+            0%, 100% { left: -100%; }
+            50% { left: 100%; }
+        }
+
+        .war-title {
+            color: #ff6b6b;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .war-description {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #e0e0e0;
+        }
+
+        .smoke-effect {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, rgba(128, 128, 128, 0.8), transparent);
+            border-radius: 50%;
+            animation: smokeRise 4s ease-in-out infinite;
+        }
+
+        @keyframes smokeRise {
+            0% { transform: scale(1) translateY(0); opacity: 0.8; }
+            100% { transform: scale(4) translateY(-100px); opacity: 0; }
+        }
+
+        .blood-splatter {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #cc0000, #660000);
+            border-radius: 50% 10% 50% 10%;
+            opacity: 0;
+            animation: bloodSplatter 3s ease-in-out infinite;
+        }
+
+        .blood-splatter:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+        .blood-splatter:nth-child(2) { top: 30%; right: 15%; animation-delay: 1s; }
+        .blood-splatter:nth-child(3) { bottom: 20%; left: 30%; animation-delay: 2s; }
+
+        @keyframes bloodSplatter {
+            0%, 90%, 100% { opacity: 0; transform: scale(0); }
+            10%, 80% { opacity: 0.6; transform: scale(1); }
+        }
+
+        /* Places Section */
+        .places-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%23001a33" width="1920" height="1080"/><polygon points="0,800 400,600 800,700 1200,500 1600,600 1920,400 1920,1080 0,1080" fill="%23003366"/><polygon points="0,600 300,400 600,500 900,300 1200,400 1500,200 1800,300 1920,100 1920,600 1500,800 1200,700 900,900 600,800 300,1000 0,900" fill="%23004080"/></svg>');
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .place-card {
+            background: linear-gradient(135deg, rgba(0, 26, 51, 0.8), rgba(0, 0, 0, 0.9));
+            border-radius: 25px;
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(144, 238, 144, 0.3);
+            opacity: 0;
+            transform: scale(0.8) rotateY(15deg);
+            transition: all 1s ease;
+            cursor: pointer;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+        }
+
+        .place-card.animate {
+            opacity: 1;
+            transform: scale(1) rotateY(0deg);
+        }
+
+        .place-card:hover {
+            transform: scale(1.05) rotateY(-5deg);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.8);
+            border-color: rgba(144, 238, 144, 0.6);
+        }
+
+        .place-image {
+            height: 250px;
+            background: linear-gradient(45deg, #003366, #004080, #0066cc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .place-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: rotate(45deg);
+            animation: placeShimmer 4s ease-in-out infinite;
+        }
+
+        @keyframes placeShimmer {
+            0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .place-info {
+            padding: 2.5rem;
+        }
+
+        .place-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #90EE90;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .place-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        /* Future Vision Section */
+        .future-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(13, 95, 58, 0.4)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%230a2a1a" width="1920" height="1080"/><circle cx="200" cy="200" r="3" fill="%23ffffff" opacity="0.8"/><circle cx="500" cy="300" r="2" fill="%23ffffff" opacity="0.6"/><circle cx="800" cy="150" r="2.5" fill="%23ffffff" opacity="0.7"/><circle cx="1200" cy="250" r="2" fill="%23ffffff" opacity="0.5"/><circle cx="1500" cy="180" r="3" fill="%23ffffff" opacity="0.9"/><circle cx="1800" cy="320" r="1.5" fill="%23ffffff" opacity="0.4"/></svg>');
+        }
+
+        .vision-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .vision-card {
+            background: linear-gradient(135deg, rgba(13, 95, 58, 0.6), rgba(0, 0, 0, 0.8));
+            padding: 3rem;
+            border-radius: 25px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(144, 238, 144, 0.4);
+            opacity: 0;
+            transform: translateY(50px) rotateX(15deg);
+            transition: all 1s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .vision-card.animate {
+            opacity: 1;
+            transform: translateY(0) rotateX(0deg);
+        }
+
+        .vision-card:hover {
+            transform: translateY(-10px) rotateX(-5deg);
+            border-color: rgba(144, 238, 144, 0.7);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        .vision-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            animation: visionFloat 3s ease-in-out infinite;
+            filter: drop-shadow(0 5px 15px rgba(144, 238, 144, 0.3));
+        }
+
+        @keyframes visionFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        .vision-title {
+            color: #90EE90;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .vision-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(45deg, rgba(13, 95, 58, 0.8) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(13, 95, 58, 0.8) 100%);
+            text-align: center;
+        }
+
+        .closing-flag {
+            width: 300px;
+            height: 200px;
+            margin: 3rem auto;
+            background: linear-gradient(to right, #0d5f3a 75%, #ffffff 75%);
+            border-radius: 15px;
+            position: relative;
+            animation: closingWave 5s ease-in-out infinite;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+        }
+
+        .closing-flag::after {
+            content: '☪';
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            color: #0d5f3a;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        @keyframes closingWave {
+            0%, 100% { transform: rotateY(0deg) rotateX(0deg); }
+            25% { transform: rotateY(-10deg) rotateX(5deg); }
+            75% { transform: rotateY(10deg) rotateX(-5deg); }
+        }
+
+        .closing-message {
+            font-size: 1.5rem;
+            margin: 3rem 0;
+            line-height: 1.8;
+            color: #e0e0e0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin: 3rem 0;
+            color: #90EE90;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .scroll-top {
+            background: linear-gradient(45deg, #90EE90, #ffffff);
+            color: #0d5f3a;
+            border: none;
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            margin-top: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .scroll-top:hover {
+            background: linear-gradient(45deg, #ffffff, #90EE90);
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Confetti Effect */
+        .confetti {
+            position: fixed;
+            top: -10px;
+            width: 12px;
+            height: 12px;
+            background: #90EE90;
+            animation: confettiFall 4s linear infinite;
+            z-index: 1000;
+        }
+
+        .confetti:nth-child(odd) {
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .confetti:nth-child(3n) {
+            background: #0d5f3a;
+            transform: rotate(45deg);
+        }
+
+        @keyframes confettiFall {
+            0% { 
+                transform: translateY(-100vh) rotate(0deg); 
+                opacity: 1; 
+            }
+            100% { 
+                transform: translateY(100vh) rotate(720deg); 
+                opacity: 0; 
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .flag-container {
+                width: 300px;
+                height: 200px;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                margin-left: 4rem;
+                margin-right: 1rem;
+            }
+            
+            .places-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .vision-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .jf17 {
+                width: 150px;
+                height: 60px;
+            }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .fade-in.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Particle System */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(144, 238, 144, 0.6);
+            border-radius: 50%;
+            animation: particleFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes particleFloat {
+            0%, 100% { 
+                transform: translateY(0) translateX(0) scale(1); 
+                opacity: 0; 
+            }
+            10%, 90% { 
+                opacity: 1; 
+            }
+            50% { 
+                transform: translateY(-100px) translateX(50px) scale(1.5); 
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- JF-17 Thunder Container -->
+    <div class="jf17-container">
+        <div class="jf17"></div>
+    </div>
+
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Happy Independence Day</h1>
+            <div class="flag-container">
+                <div class="flag"></div>
+            </div>
+            <p style="font-size: 2rem; color: #90EE90; opacity: 0; animation: fadeIn 2s ease 3s forwards; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">🇵🇰 Pakistan Zindabad 🇵🇰</p>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="section history-section">
+        <div class="section-content">
+            <h2 class="section-title fade-in">Pakistan's Complete History</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1947</div>
+                        <h3 class="timeline-title">Birth of Pakistan</h3>
+                        <p class="timeline-description">Pakistan gained independence from British rule on August 14, 1947, under the visionary leadership of Quaid-e-Azam Muhammad Ali Jinnah. The partition created two separate nations based on the two-nation theory, establishing Pakistan as a homeland for Muslims of the Indian subcontinent.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1948-1958</div>
+                        <h3 class="timeline-title">Foundation Years</h3>
+                        <p class="timeline-description">The early years were marked by the tragic assassination of Quaid-e-Azam in 1948, the Kashmir conflict, and the challenges of building a new nation. The Constituent Assembly worked on creating Pakistan's first constitution while dealing with refugee rehabilitation and administrative challenges.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1958-1971</div>
+                        <h3 class="timeline-title">Military Rule & East Pakistan Crisis</h3>
+                        <p class="timeline-description">General Ayub Khan's military rule brought stability but also political tensions. The period saw economic growth but culminated in the 1971 crisis, leading to the creation of Bangladesh and a significant transformation of Pakistan's geography and identity.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1972-1999</div>
+                        <h3 class="timeline-title">Democratic Struggles & Nuclear Achievement</h3>
+                        <p class="timeline-description">Zulfikar Ali Bhutto's leadership, followed by General Zia-ul-Haq's Islamization policies, and the alternating governments of Benazir Bhutto and Nawaz Sharif. This era culminated in Pakistan becoming a nuclear power in 1998, establishing strategic parity in South Asia.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2000-Present</div>
+                        <h3 class="timeline-title">Modern Pakistan</h3>
+                        <p class="timeline-description">Pakistan continues to evolve as a nuclear power and regional player, facing modern challenges including terrorism, economic development, and democratic consolidation. The China-Pakistan Economic Corridor (CPEC) represents a new chapter in Pakistan's development journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wars Section -->
+    <section class="section wars-section">
+        <div class="section-content">
+            <h2 class="section-title fade-in">Wars & Conflicts</h2>
+            
+            <div class="war-card fade-in">
+                <div class="smoke-effect"></div>
+                <div class="blood-splatter"></div>
+                <div class="blood-splatter"></div>
+                <div class="blood-splatter"></div>
+                <h3 class="war-title">1947-48 First Kashmir War</h3>
+                <p class="war-description">The first major conflict between Pakistan and India erupted over the princely state of Jammu and Kashmir. Pakistani tribal forces and regular army units fought against Indian forces, resulting in the establishment of the Line of Control. This war set the foundation for the ongoing Kashmir dispute and established Pakistan's military doctrine of defending the ideological frontiers of the nation.</p>
+            </div>
+
+            <div class="war-card fade-in">
+                <div class="smoke-effect"></div>
+                <div class="blood-splatter"></div>
+                <div class="blood-splatter"></div>
+                <div class="blood-splatter"></div>
+                <h3 class="war-title">1965 Second Kashmir War</h3>
+                <p class="war-description">A 17-day intense conflict that began with Operation Gibraltar, Pakistan's attempt to infiltrate Kashmir and spark an uprising. The war expanded across the international border with major tank battles in Punjab. Pakistani forces showed remarkable courage, particularly in the defense of Lahore and the famous tank battle of Chawinda, one of the largest since World War II.</p>
+            </div>
+
+            <div class="war-card fade-in">
+                <div class="smoke-effect"></div>
+                <div class="blood-splatter"></div>
+                <div class="blood-splatter"></div>
+                <div class="blood-splatter"></div>
+                <h3 class="war-title">1971 Bangladesh Liberation War</h3>
+                <p class="war-description">The most challenging conflict in Pakistan's history, fought on two fronts with India supporting Bengali independence movement. Despite being outnumbered and fighting 1,000 miles from home, Pakistani forces showed extraordinary valor. The war resulted in the creation of Bangladesh but also demonstrated the resilience and fighting spirit of Pakistani armed forces under impossible odds.</p>
+            </div>
+
+            <div class="war-card fade-in">
+                <div class="smoke-effect"></div>
+                <div class="blood-splatter"></div>
+                <div class="blood-splatter"></div>
+                <div class="blood-splatter"></div>
+                <h3 class="war-title">1999 Kargil Conflict</h3>
+                <p class="war-description">A limited but intense high-altitude warfare in the Kargil district of Kashmir. Pakistani forces, including Northern Light Infantry, occupied strategic heights overlooking the vital Srinagar-Leh highway. The conflict showcased Pakistan's military capabilities in extreme terrain and weather conditions, with soldiers fighting at altitudes exceeding 18,000 feet.</p>
+            </div>
+
+            <div class="war-card fade-in">
+                <div class="smoke-effect"></div>
+                <div class="blood-splatter"></div>
+                <div class="blood-splatter"></div>
+                <div class="blood-splatter"></div>
+                <h3 class="war-title">War on Terror (2001-Present)</h3>
+                <p class="war-description">Pakistan's longest and most complex military engagement, fighting terrorism on multiple fronts. Operations like Zarb-e-Azb and Radd-ul-Fasaad have successfully eliminated terrorist sanctuaries. Pakistani forces have made unprecedented sacrifices, with over 80,000 casualties including civilians, military personnel, and law enforcement agencies in the fight against extremism.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beautiful Places Section -->
+    <section class="section places-section">
+        <div class="section-content">
+            <h2 class="section-title fade-in">Beautiful Places in Pakistan</h2>
+            <div class="places-grid">
+                <div class="place-card fade-in">
+                    <div class="place-image">🏔️</div>
+                    <div class="place-info">
+                        <h3 class="place-title">Hunza Valley</h3>
+                        <p class="place-description">A breathtaking valley in Gilgit-Baltistan, surrounded by towering peaks including Rakaposhi, Ultar Sar, and Hunza Peak. Known for its crystal-clear lakes, ancient forts, and the legendary longevity of its people. The valley offers spectacular views of some of the world's highest mountains and serves as the gateway to the Karakoram Highway.</p>
+                    </div>
+                </div>
+                
+                <div class="place-card fade-in">
+                    <div class="place-image">🕌</div>
+                    <div class="place-info">
+                        <h3 class="place-title">Badshahi Mosque</h3>
+                        <p class="place-description">One of the largest and most magnificent mosques in the world, built by Mughal Emperor Aurangzeb in 1673. This architectural masterpiece in Lahore can accommodate 100,000 worshippers and represents the pinnacle of Mughal architecture with its red sandstone construction, marble inlay work, and imposing minarets that dominate Lahore's skyline.</p>
+                    </div>
+                </div>
+                
+                <div class="place-card fade-in">
+                    <div class="place-image">🗼</div>
+                    <div class="place-info">
+                        <h3 class="place-title">Minar-e-Pakistan</h3>
+                        <p class="place-description">A 70-meter tall national monument in Lahore commemorating the historic Lahore Resolution of 1940. Built with a unique blend of Mughal and modern architecture, it stands as a symbol of Pakistan's independence movement. The monument is constructed with stone, marble, and stainless steel, representing different eras of the struggle for independence.</p>
+                    </div>
+                </div>
+                
+                <div class="place-card fade-in">
+                    <div class="place-image">🏛️</div>
+                    <div class="place-info">
+                        <h3 class="place-title">Mohenjo-daro</h3>
+                        <p class="place-description">An ancient Indus Valley civilization site dating back to 2500 BCE, showcasing one of the world's earliest urban settlements. This UNESCO World Heritage Site in Sindh reveals advanced city planning, sophisticated drainage systems, and standardized weights and measures, providing insights into one of humanity's earliest civilizations.</p>
+                    </div>
+                </div>
+                
+                <div class="place-card fade-in">
+                    <div class="place-image">⛰️</div>
+                    <div class="place-info">
+                        <h3 class="place-title">K2 Base Camp</h3>
+                        <p class="place-description">The base camp of the world's second-highest and most technically challenging mountain to climb. Located in the Karakoram range, the trek to K2 base camp offers spectacular views of some of the world's most formidable peaks. Known as the "Savage Mountain," K2 represents the ultimate challenge for mountaineers worldwide.</p>
+                    </div>
+                </div>
+                
+                <div class="place-card fade-in">
+                    <div class="place-image">🏖️</div>
+                    <div class="place-info">
+                        <h3 class="place-title">Gwadar Port</h3>
+                        <p class="place-description">A strategic deep-sea port on the Arabian Sea coast of Balochistan, serving as the crown jewel of the China-Pakistan Economic Corridor (CPEC). This modern port city represents Pakistan's gateway to Central Asia and the Middle East, featuring pristine beaches, unique rock formations, and serving as a symbol of Pakistan's economic future.</p>
+                    </div>
+                </div>
+
+                <div class="place-card fade-in">
+                    <div class="place-image">🌸</div>
+                    <div class="place-info">
+                        <h3 class="place-title">Skardu Valley</h3>
+                        <p class="place-description">The gateway to some of the world's highest peaks, including K2, Broad Peak, and Gasherbrum. Located in Gilgit-Baltistan, Skardu offers breathtaking landscapes with crystal-clear lakes like Sheosar and Satpara, ancient Buddhist rock carvings, and serves as the base for numerous mountaineering expeditions in the Karakoram range.</p>
+                    </div>
+                </div>
+
+                <div class="place-card fade-in">
+                    <div class="place-image">🏰</div>
+                    <div class="place-info">
+                        <h3 class="place-title">Lahore Fort</h3>
+                        <p class="place-description">A magnificent Mughal fortress and UNESCO World Heritage Site, showcasing over 1,000 years of architectural evolution. The fort houses the famous Sheesh Mahal (Palace of Mirrors), beautiful gardens, and intricate frescoes. It stands as a testament to the grandeur of Mughal architecture and the rich cultural heritage of Punjab.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Vision Section -->
+    <section class="section future-section">
+        <div class="section-content">
+            <h2 class="section-title fade-in">Our Future Vision</h2>
+            <div class="vision-cards">
+                <div class="vision-card fade-in">
+                    <div class="vision-icon">🚀</div>
+                    <h3 class="vision-title">Technology & Innovation Hub</h3>
+                    <p class="vision-description">Transforming Pakistan into a leading technology and innovation hub in South Asia, fostering startups, artificial intelligence, and digital transformation. Building world-class tech cities and promoting research and development in emerging technologies like blockchain, IoT, and renewable energy solutions.</p>
+                </div>
+                
+                <div class="vision-card fade-in">
+                    <div class="vision-icon">🌱</div>
+                    <h3 class="vision-title">Green Energy Revolution</h3>
+                    <p class="vision-description">Leading the transition to renewable energy sources with massive solar, wind, and hydroelectric projects. Reducing carbon footprint through sustainable development practices and positioning Pakistan as a regional leader in clean energy production and environmental conservation initiatives.</p>
+                </div>
+                
+                <div class="vision-card fade-in">
+                    <div class="vision-icon">🎓</div>
+                    <h3 class="vision-title">Education Excellence</h3>
+                    <p class="vision-description">Building world-class educational institutions and ensuring quality education for all citizens. Creating a knowledge-based economy through investment in higher education, vocational training, and research universities that can compete globally and produce skilled professionals for the future.</p>
+                </div>
+                
+                <div class="vision-card fade-in">
+                    <div class="vision-icon">🤝</div>
+                    <h3 class="vision-title">Regional Peace & Cooperation</h3>
+                    <p class="vision-description">Promoting peace, stability, and economic cooperation in South Asia and beyond. Fostering diplomatic relations, trade partnerships, and cultural exchanges that benefit all nations in the region while maintaining Pakistan's sovereignty and strategic interests.</p>
+                </div>
+                
+                <div class="vision-card fade-in">
+                    <div class="vision-icon">💼</div>
+                    <h3 class="vision-title">Economic Powerhouse</h3>
+                    <p class="vision-description">Achieving sustainable economic growth through CPEC, trade expansion, and industrial development. Diversifying the economy, promoting exports, attracting foreign investment, and creating millions of jobs to establish Pakistan as a major economic force in Asia.</p>
+                </div>
+                
+                <div class="vision-card fade-in">
+                    <div class="vision-icon">🏥</div>
+                    <h3 class="vision-title">Universal Healthcare</h3>
+                    <p class="vision-description">Providing comprehensive healthcare coverage and building modern medical facilities across the country. Ensuring the wellbeing of all citizens through accessible, affordable, and quality healthcare services, medical research, and preventive care programs.</p>
+                </div>
+
+                <div class="vision-card fade-in">
+                    <div class="vision-icon">🛡️</div>
+                    <h3 class="vision-title">Defense & Security</h3>
+                    <p class="vision-description">Maintaining strong defense capabilities while promoting peace and stability. Continuing to modernize armed forces with indigenous defense production, advanced military technology, and strategic partnerships to ensure national security and regional balance.</p>
+                </div>
+
+                <div class="vision-card fade-in">
+                    <div class="vision-icon">🌍</div>
+                    <h3 class="vision-title">Global Leadership</h3>
+                    <p class="vision-description">Establishing Pakistan as a responsible global player and leader in international affairs. Contributing to global peace, climate action, and sustainable development while representing the interests of the Muslim world and developing nations on international platforms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Closing Section -->
+    <section class="section contact-section">
+        <div class="section-content">
+            <h2 class="section-title fade-in">Pakistan Zindabad!</h2>
+            <div class="closing-flag"></div>
+            <p class="closing-message fade-in">
+                Thank you for celebrating Pakistan's 77th Independence Day with us. May our beloved nation continue to prosper, grow stronger, and shine bright among the nations of the world. Together, we will build a Pakistan that our founding fathers envisioned - a land of peace, prosperity, and progress.
+            </p>
+            <p class="quote fade-in">
+                "With faith, discipline and selfless devotion to duty, there is nothing worthwhile that you cannot achieve." <br>
+                <strong>- Quaid-e-Azam Muhammad Ali Jinnah</strong>
+            </p>
+            <button class="scroll-top" onclick="scrollToTop()">🚀 Back to Top</button>
+        </div>
+    </section>
+
+    <script>
+        // Custom Cursor
+        const cursor = document.querySelector('.custom-cursor');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            cursorX += (mouseX - cursorX) * 0.1;
+            cursorY += (mouseY - cursorY) * 0.1;
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in, .timeline-item, .war-card, .place-card, .vision-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll to top
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Create confetti effect
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.backgroundColor = ['#90EE90', '#ffffff', '#0d5f3a'][Math.floor(Math.random() * 3)];
+            confetti.style.animationDelay = Math.random() * 2 + 's';
+            confetti.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            document.body.appendChild(confetti);
+
+            setTimeout(() => {
+                confetti.remove();
+            }, 5000);
+        }
+
+        // Create confetti periodically
+        setInterval(createConfetti, 800);
+
+        // Create particle system
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.top = Math.random() * 100 + 'vh';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // Add hover effects to interactive elements
+        document.querySelectorAll('.place-card, .vision-card, .war-card, button').forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
+        });
+
+        // Parallax effect for sections
+        let ticking = false;
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach((section, index) => {
+                const rate = scrolled * -0.3;
+                section.style.backgroundPositionY = rate + 'px';
+            });
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        });
+
+        // Add click ripple effect to buttons
+        document.querySelectorAll('button, .place-card, .vision-card').forEach(element => {
+            element.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(144, 238, 144, 0.6)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.8s linear';
+                ripple.style.pointerEvents = 'none';
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 800);
+            });
+        });
+
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // JF-17 Thunder sound effect simulation (visual feedback)
+        function createSonicBoom() {
+            const boom = document.createElement('div');
+            boom.style.position = 'fixed';
+            boom.style.top = '20%';
+            boom.style.left = '50%';
+            boom.style.width = '100px';
+            boom.style.height = '100px';
+            boom.style.background = 'radial-gradient(circle, rgba(255,255,255,0.8), transparent)';
+            boom.style.borderRadius = '50%';
+            boom.style.transform = 'translate(-50%, -50%) scale(0)';
+            boom.style.animation = 'sonicBoom 0.5s ease-out';
+            boom.style.pointerEvents = 'none';
+            boom.style.zIndex = '1001';
+            document.body.appendChild(boom);
+
+            setTimeout(() => boom.remove(), 500);
+        }
+
+        // Add sonic boom animation
+        const sonicStyle = document.createElement('style');
+        sonicStyle.textContent = `
+            @keyframes sonicBoom {
+                0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+                100% { transform: translate(-50%, -50%) scale(10); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(sonicStyle);
+
+        // Trigger sonic boom periodically
+        setInterval(createSonicBoom, 12000);
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 1s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96e8c12da0eb21f5',t:'MTc1NTA5Mzc5My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
